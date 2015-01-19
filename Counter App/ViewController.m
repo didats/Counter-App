@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    currentNumber = 0;
+    
+    [self setLabelWithNumber:currentNumber];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +27,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) setLabelWithNumber:(NSInteger) number {
+    [self.mainLabel setText:[NSString stringWithFormat:@"%ld", (long)currentNumber]];
+}
+
+- (IBAction)buttonClicked:(id)sender {
+    if ([sender tag] == 1) {
+        currentNumber++;
+    }
+    else {
+        currentNumber--;
+    }
+    
+    [self setLabelWithNumber:currentNumber];
+}
 @end

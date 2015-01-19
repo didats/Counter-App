@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    NSInteger currentNumber;
+}
 
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+- (IBAction)buttonClicked:(id)sender;
 
 @end
 
